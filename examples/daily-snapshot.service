@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily snapshot
+
+[Service]
+Nice=19
+IOSchedulingClass=idle
+Type=simple
+ExecStart=/usr/local/sbin/btrfs-snp <directory> daily 7
+
+[Install]
+WantedBy=multi-user.target

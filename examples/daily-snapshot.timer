@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily snapshots
+
+[Timer]
+OnCalendar=daily
+AccuracySec=10m
+RandomizedDelaySec=1h
+Unit=daily-snapshot.service
+
+[Install]
+WantedBy=timers.target

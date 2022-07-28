@@ -53,6 +53,14 @@ EOF
 chmod +x /etc/cron.hourly/btrfs-snp
 ```
 
+### Systemd
+
+1. Edit and rename the example `daily-snapshot.service` file as needed and copy to `/etc/systemd/system/`.
+2. Rename and copy the `daily-snapshot.timer` file to the same location.
+3. Reload systemd services files: `sudo systemctl daemon-reload`
+4. Start the timer: `sudo systemctl start <filename>.timer`
+5. Enable the timer so that it automatically starts on boot: `sudo systemctl enable <filename>.timer`
+
 Inspired by [btrfs-snap](https://github.com/jf647/btrfs-snap) by Birger Monsen
                                                                                                                                                                                                       
 More at [ownyourbits.com](https://ownyourbits.com)
